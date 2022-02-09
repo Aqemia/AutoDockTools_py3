@@ -148,41 +148,41 @@ def prepare_receptor(
     unique_atom_names = False
 
     #'r:vo:A:Cp:U:eM:d:wh'
-    for o, a in opt_list:
-        if o in ('-r', '--r'):
+    for o, a in opt_list.items():
+        if o == 'r':
             receptor_filename = a
             if verbose: print('set receptor_filename to ', a)
-        if o in ('-v', '--v'):
+        if o == 'v':
             verbose = True
             if verbose: print('set verbose to ', True)
-        if o in ('-o', '--o'):
+        if o == 'o':
             outputfilename = a
             if verbose: print('set outputfilename to ', a)
-        if o in ('-A', '--A'):
+        if o == 'A':
             repairs = a
             if verbose: print('set repairs to ', a)
-        if o in ('-C', '--C'):
+        if o == 'C':
             charges_to_add = None
             if verbose: print('do not add charges')
-        if o in ('-p', '--p'):
+        if o  == 'p':
             if not preserve_charge_types:
                 preserve_charge_types = a
             else:
                 preserve_charge_types = preserve_charge_types + ','+ a
             if verbose: print('preserve initial charges on ', preserve_charge_types)
-        if o in ('-U', '--U'):
+        if o == 'U':
             cleanup  = a
             if verbose: print('set cleanup to ', a)
-        if o in ('-e', '--e'):
+        if o == 'e':
             delete_single_nonstd_residues  = True
             if verbose: print('set delete_single_nonstd_residues to True')
-        if o in ('-M', '--M'):
+        if o == 'M':
             mode = a
             if verbose: print('set mode to ', a)
-        if o in ('-d', '--d'):
+        if o == 'd':
             dictionary  = a
             if verbose: print('set dictionary to ', dictionary)
-        if o in ('-w', '--w'):
+        if o == 'w':
             unique_atom_names = True
             if verbose: print('set unique_atom_names to ', unique_atom_names)
         # if o in ('-h', '--'):
